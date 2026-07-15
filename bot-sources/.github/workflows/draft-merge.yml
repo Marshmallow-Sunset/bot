@@ -14,11 +14,11 @@ jobs:
           TARGET="${{ github.base_ref }}"
           FROM="${{ github.head_ref }}"
 
-          if [[ "$FROM" == ocode-* ]] && [[ "$TARGET" == draft-* ]]; then
+          if [[ "$FROM" == ocode-* ]]; then
             echo "Слияние может быть одобрено"
             exit 0
 
-          elif [[ "$FROM" != ocode-* ]] && [[ "$TARGET" == draft-* ]]; then
+          elif [[ "$FROM" != ocode-* ]]; then
             echo "Слияние запрещено. FROM != ocode"
             exit 1
           fi

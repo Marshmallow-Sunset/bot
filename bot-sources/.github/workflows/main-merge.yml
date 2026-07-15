@@ -14,11 +14,11 @@ jobs:
           TARGET="${{ github.base_ref }}"
           FROM="${{ github.head_ref }}"
 
-          if [[ "$FROM" == beta-* ]] && [[ "$TARGET" == main ]]; then
+          if [[ "$FROM" == beta-* ]]; then
             echo "Слияние может быть одобрено"
             exit 0
 
-          elif [[ "$FROM" != beta-* ]] && [[ "$TARGET" == main ]]; then
+          elif [[ "$FROM" != beta-* ]]; then
             echo "Слияние запрещено. FROM != beta"
             exit 1
           fi
