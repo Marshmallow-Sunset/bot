@@ -1,9 +1,9 @@
-name: проверка PR в main
+name: проверка PR в beta
 on:
   pull_request:
     types: [opened, edited]
     branches:
-      - main
+      - beta-*
 jobs:
   main-job:
     runs-on: ubuntu-latest
@@ -14,11 +14,11 @@ jobs:
           TARGET="${{ github.base_ref }}"
           FROM="${{ github.head_ref }}"
 
-          if [[ "$FROM" == beta-* ]] && [[ "$TARGET" == main ]]; then
+          if [[ "$FROM" == draft-* ]] && [[ "$TARGET" == beta-* ]]; then
             echo "Слияние может быть одобрено"
             exit 0
 
-          elif [[ "$FROM" != beta-* ]] && [[ "$TARGET" == main ]]; then
-            echo "Слияние запрещено. FROM != beta"
+          elif [[ "$FROM" != draft-* ]] && [[ "$TARGET" == beta-* ]]; then
+            echo "Слияние запрещено. FROM != draft"
             exit 1
           fi
