@@ -1,0 +1,24 @@
+name: проверка PR в main
+on:
+  pull_request:
+    types: [opened, edited]
+    branches:
+      - main
+jobs:
+  main-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: main
+        run: |
+
+          TARGET="${{ github.base_ref }}"
+          FROM="${{ github.head_ref }}"
+
+          if [[ "$FROM" == beta-* ]]; then
+            echo "Слияние может быть одобрено"
+            exit 0
+
+          elif [[ "$FROM" != beta-* ]]; then
+            echo "Слияние запрещено. FROM != beta"
+            exit 1
+          fi
