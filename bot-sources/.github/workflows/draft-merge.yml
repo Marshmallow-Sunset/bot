@@ -5,7 +5,7 @@ on:
     branches:
       - draft-*
 jobs:
-  main-job:
+  draft-merge:
     runs-on: ubuntu-latest
     steps:
       - name: main
