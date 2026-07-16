@@ -5,7 +5,7 @@ on:
     branches:
       - main
 jobs:
-  main-job:
+  main-merge:
     runs-on: ubuntu-latest
     steps:
       - name: main
