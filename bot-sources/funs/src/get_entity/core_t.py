@@ -7,6 +7,7 @@ from funs.get_entity.config_t import get_token
 # storage
 import storage.core
 
+# code
 async def get_bot_src():
     if storage.core.bot == None:
         storage.core.bot = Bot(get_token())
