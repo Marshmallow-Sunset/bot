@@ -8,16 +8,13 @@ Null - читает ее из файла, сохраняет в хранилищ
 ```text
 bot/  
 |—📁funs/  
-    |—📁databases/  
+    |—📁lists/  *//saved through SQL*
         |—📄users.py  
-            |—⚪️load_users_database()  
-            |—⚪️save_users_database()  
+            |—⚪️get_users_list()  
+            |—⚪️add_in_users_list()  
+            |—⚪️del_from_users_list()  
             |—... *//different actions*  
-        |—📄admins.py  
-            |—⚪️load_admins_database()  
-            |—⚪️save_admins_datanase()  
-            |—... *//different actions*  
-        |—... *//different bases*  
+        |—... *//different lists*  
     |—📁get_entity/  
         |—📄config_t.py  
             |—get_token() *//#1.1{значения токена}*  
@@ -26,16 +23,13 @@ bot/
             |—get_router() *//#1.0{роутера}*  
     |—... *//next topics*  
     |—📁src/  
-        |—📁databases/  
+        |—📁lists/  *//saved through SQL*
             |—📄users.py  
-                |—⚪️load_users_database_src()  
-                |—⚪️save_users_database_src()  
+                |—⚪️get_users_list_src()  
+                |—⚪️add_in_users_list_src()  
+                |—⚪️del_from_users_list_src()
                 |—... *//dufferent actions*  
-            |—📄admins.py  
-                |—⚪️load_admins_database_src()  
-                |—⚪️save_admins_database_src()  
-                |—... *//dufferent actions*  
-            |—... *//different bases*  
+            |—... *//different lists*  
         |—📁get_entity/  
             |—📄config_t.py  
                 |—get_token_src()  
@@ -46,7 +40,7 @@ bot/
 |—📁headers/  
     |—📄welcome.py //group_1  
         |—⚪️cm_start_header()  
-        |—⚪️cm_help_header()  
+        |—🔴cm_help_header()  *//Not implemented*  
     |—📄group_2.py  
         |—⚪️...  
         |—⚪️...  
@@ -54,7 +48,7 @@ bot/
 |—📁src/  
     |—📄welcome.py //group_1  
         |—⚪️cm_start_src()  
-        |—⚪️cm_help_src()  
+        |—🔴cm_help_src()  *//Not implemented*  
     |—📄group_2.py  
         |—⚪️...  
         |—⚪️...  
@@ -80,7 +74,7 @@ bot/
     |—📄config.json  
         |—⚪️token  
         |—⚪️...  
-    |—📁databases/  
+    |—📁lists/  
         |—📄admins.db  
         |—📄users.db  
         |—...  
@@ -89,13 +83,12 @@ bot/
         |—📄совладелец.log  
     |—...  
     // создание разделов для сохранения предпочтений об админах.  
-|—📁storage/ *// used with 'import config'*  
+|—📁storage/ *// used with 'import ...'*  
     |—📄config.py  
         |—⚪️token=Null *//string*  
         |—⚪️... *//other*  
     |—📄core.py  
         *//save core structs*  
-        |—⚪️dispather=Dispather()  
         |—⚪️router=Router()  
         |—⚪️bot=Bot("TOKEN")  
         |—⚪️... *//others*  
