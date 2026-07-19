@@ -8,53 +8,53 @@ Null - читает ее из файла, сохраняет в хранилищ
 ```text
 bot/  
 |—📁funs/  
-    |—📁lists/  *//saved through SQL*
+    |—📁lists/  *//хранение в sql базах*  
         |—📄users.py  
             |—⚪️get_users_list()  
             |—⚪️add_in_users_list()  
             |—⚪️del_from_users_list()  
-            |—... *//different actions*  
-        |—... *//different lists*  
+            |—... *//другие действия со списком*  
+        |—... *//другие списки*  
     |—📁get_entity/  
         |—📄config_t.py  
             |—get_token() *//#1.1{значения токена}*  
         |—📄core_t.py  
             |—get_bot() *//#1.0{бота}*  
             |—get_router() *//#1.0{роутера}*  
-    |—... *//next topics*  
+    |—... *//следующий раздел*  
     |—📁src/  
-        |—📁lists/  *//saved through SQL*
+        |—📁lists/  *//хранение в sql базах*  
             |—📄users.py  
                 |—⚪️get_users_list_src()  
                 |—⚪️add_in_users_list_src()  
                 |—⚪️del_from_users_list_src()
-                |—... *//dufferent actions*  
-            |—... *//different lists*  
+                |—... *//другие действия со списком*  
+            |—... *//другие списки*  
         |—📁get_entity/  
             |—📄config_t.py  
                 |—get_token_src()  
             |—📄core_t.py  
                 |—get_bot_src() *//#1.0{бота}*  
                 |—get_router_src() *//#1.0{роутера}*  
-    |—... *//next topics*  
+    |—... *//следующий раздел*  
 |—📁headers/  
     |—📄welcome.py //group_1  
         |—⚪️cm_start_header()  
-        |—🔴cm_help_header()  *//Not implemented*  
+        |—🔴cm_help_header()  *//Не реализовано*   
     |—📄group_2.py  
         |—⚪️...  
         |—⚪️...  
-    |—... *//different cm groups*  
+    |—... *//другие группы, обьединяющие команды*  
 |—📁src/  
-    |—📄welcome.py //group_1  
+    |—📄welcome.py
         |—⚪️cm_start_src()  
-        |—🔴cm_help_src()  *//Not implemented*  
+        |—🔴cm_help_src()  *//Не реализовано*  
     |—📄group_2.py  
         |—⚪️...  
         |—⚪️...  
-    |—... *//different cm groups*  
+    |—... *//другие группы, обьединяющие команды*  
 |—📁frontend/  
-    |—📁welcome/ //group_1  
+    |—📁welcome/ 
         |—📄texts.py  
         |—📄cm_start.gif  
         |—📄reply.py  
@@ -83,12 +83,13 @@ bot/
         |—📄совладелец.log  
     |—...  
     // создание разделов для сохранения предпочтений об админах.  
-|—📁storage/ *// used with 'import ...'*  
+|—📁storage/ *//использование только через `import`, `from` запрещен*  
     |—📄config.py  
-        |—⚪️token=Null *//string*  
-        |—⚪️... *//other*  
+        *//переменных для настроек*
+        |—⚪️token=Null
+        |—⚪️... *//другие переменные-кэши, относящиеся к разделу настроек*  
     |—📄core.py  
-        *//save core structs*  
+        *//переменные `core`*  
         |—⚪️router=Router()  
         |—⚪️bot=Bot("TOKEN")  
         |—⚪️... *//others*  
