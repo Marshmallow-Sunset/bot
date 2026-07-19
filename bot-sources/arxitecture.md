@@ -57,25 +57,24 @@ bot/
     |—📁welcome/ 
         |—📄texts.py  
         |—📄cm_start.gif  
-        |—📄reply.py  
-        |—📄buttons.py  
+        |—📄reply.py  *//обработчики*  
+        |—📄buttons.py  *//обработчики*  
         |—📁src/  
-            |—📄reply.py  
-            |—📄buttons.py  
+            |—📄reply.py  *//исходники*  
+            |—📄buttons.py  *//исходники*  
     |—📁group_2/  
         |—📄texts.py  
-        |—📄reply.py  
-        |—📄buttons.py  
+        |—📄reply.py  *//обработчики*  
+        |—📄buttons.py  *//обработчики*  
         |—📁src/  
-            |—📄reply.py  
-            |—📄buttons.py  
+            |—📄reply.py  *//исходники*  
+            |—📄buttons.py  *//исходники*  
     |—...  
 |—📁data/  
     |—📄config.json  
         |—⚪️token  
         |—⚪️...  
     |—📁lists/  
-        |—📄admins.db  
         |—📄users.db  
         |—...  
     |—📁logs/  
